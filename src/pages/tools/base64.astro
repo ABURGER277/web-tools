@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Base64 인코더/디코더" description="문자열을 Base64로 변환하거나, Base64를 문자열로 디코딩하세요.">
+  <h2>Base64 인코더 / 디코더</h2>
+
+  <textarea id="base64-input" placeholder="여기에 문자열 또는 base64 입력" rows="8" cols="80"></textarea>
+  <br />
+  <button onclick="encodeBase64()">인코딩</button>
+  <button onclick="decodeBase64()">디코딩</button>
+
+  <h3>출력</h3>
+  <pre id="base64-output" style="white-space: pre-wrap;"></pre>
+
+  <script type="module">
+    function encodeBase64() {
+      const input = document.getElementById('base64-input');
+      const output = document.getElementById('base64-output');
+      if (!output) return;
+
+      try {
+        output.textContent = btoa(unescape(encodeURIComponent(input.value)));
+      } catch (e) {
+        output.textContent = '❌ 인코딩 실패: 유효한 문자열이 아닙니다.';
+      }
+    }
+
+    function decodeBase64() {
+      const input = document.getElementById('base64-input');
+      const output = document.getElementById('base64-output');
+      if (!output) return;
+
+      try {
+        output.textContent = decodeURIComponent(escape(atob(input.value)));
+      } catch (e) {
+        output.textContent = '❌ 디코딩 실패: 유효한 Base64 문자열이 아닙니다.';
+      }
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="JSON Formatter" description="JSON 문자열을 보기 좋게 포맷팅 해보세요.">
+  <h2>JSON Formatter</h2>
+  <textarea id="input" placeholder="여기에 JSON 입력" rows="10" cols="80"></textarea>
+  <br />
+  <button onclick="formatJson()">Format</button>
+  <pre id="output"></pre>
+
+  <script>
+    function formatJson() {
+      const input = document.getElementById('input') as HTMLTextAreaElement;
+      const inputValue = input.value;
+
+      try {
+        const json = JSON.parse(inputValue);
+        const output = document.getElementById('output');
+        if (output) output.textContent = JSON.stringify(json, null, 2);
+      } catch (e) {
+        const output = document.getElementById('output');
+        if (output) output.textContent = '❌ 유효한 JSON이 아닙니다.';
+      }
+    }
+  </script>
+</BaseLayout>
