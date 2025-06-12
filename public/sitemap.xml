@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://web-tools.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/json-formatter</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/url-encoder</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/base64</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/uuid</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/timestamp</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/lorem</loc>
+  </url>
+  <url>
+    <loc>https://web-tools.vercel.app/tools/char-count</loc>
+  </url>
+</urlset>

@@ -2,8 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="UUID Generator" description="UUID v4를 생성하세요.">
-  <h2>UUID Generator</h2>
+<BaseLayout
+  title="UUID Generator - UUID 생성기"
+  description="Generate unique UUIDs for identifiers. 고유 식별자를 빠르게 생성하세요."
+>
+  <h2 class="tool-title">UUID Generator</h2>
   <button onclick="generateUUID()">새 UUID 생성</button>
   <pre id="uuid-output" style="margin-top: 1rem;"></pre>
 

@@ -112,3 +112,10 @@ body {
   font-weight: 700;
   color: #1976d2;
 }
+
+.tool-title{
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}

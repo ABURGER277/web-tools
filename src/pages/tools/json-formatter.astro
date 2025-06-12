@@ -2,8 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="JSON Formatter" description="JSON 문자열을 보기 좋게 포맷팅 해보세요.">
-  <h2>JSON Formatter</h2>
+<BaseLayout
+  title="JSON Formatter - JSON 포맷터"
+  description="Format and beautify your JSON strings. JSON 문자열을 보기 좋게 정렬해주는 도구입니다."
+>
+  <h2 class="tool-title">JSON Formatter</h2>
   <textarea id="input" placeholder="여기에 JSON 입력" rows="10" cols="80"></textarea>
   <br />
   <button onclick="formatJson()">Format</button>

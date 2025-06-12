@@ -2,8 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Lorem Ipsum 생성기" description="샘플 더미 텍스트를 생성하세요.">
-  <h2>Lorem Ipsum Generator</h2>
+<BaseLayout
+  title="Lorem Ipsum Generator - 테스트용 더미 텍스트 생성기"
+  description="Create placeholder text for design and development. 목업용 더미 텍스트를 만들어보세요."
+>
+  <h2 class="tool-title">Lorem Ipsum Generator</h2>
   <button onclick="generateLorem()">더미 텍스트 생성</button>
   <pre id="lorem-output" style="margin-top: 1rem;"></pre>
 
