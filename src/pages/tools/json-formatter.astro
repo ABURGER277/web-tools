@@ -9,9 +9,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <button onclick="formatJson()">Format</button>
   <pre id="output"></pre>
 
-  <script>
+  <script is:inline>
     function formatJson() {
-      const input = document.getElementById('input') as HTMLTextAreaElement;
+      const input = document.getElementById('input');
       const inputValue = input.value;
 
       try {

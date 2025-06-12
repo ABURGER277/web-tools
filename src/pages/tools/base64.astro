@@ -13,7 +13,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <h3>출력</h3>
   <pre id="base64-output" style="white-space: pre-wrap;"></pre>
 
-  <script type="module">
+  <script is:inline>
     function encodeBase64() {
       const input = document.getElementById('base64-input');
       const output = document.getElementById('base64-output');

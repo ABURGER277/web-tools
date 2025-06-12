@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="URL 인코더/디코더" description="문자열을 URL-safe 형식으로 변환하거나 복원하세요.">
+  <h2>URL 인코더 / 디코더</h2>
+
+  <textarea id="url-input" placeholder="여기에 문자열 또는 인코딩된 텍스트 입력" rows="8" cols="80"></textarea>
+  <br />
+  <button onclick="encodeUrl()">인코딩</button>
+  <button onclick="decodeUrl()">디코딩</button>
+
+  <h3>출력</h3>
+  <pre id="url-output" style="white-space: pre-wrap;"></pre>
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center; margin-top:1rem;"
+       data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <script is:inline>
+    function encodeUrl() {
+      const input = document.getElementById('url-input');
+      const output = document.getElementById('url-output');
+      if (!output) return;
+
+      try {
+        output.textContent = encodeURIComponent(input.value);
+      } catch (e) {
+        output.textContent = '❌ 인코딩 실패: 유효한 문자열이 아닙니다.';
+      }
+    }
+
+    function decodeUrl() {
+      const input = document.getElementById('url-input');
+      const output = document.getElementById('url-output');
+      if (!output) return;
+
+      try {
+        output.textContent = decodeURIComponent(input.value);
+      } catch (e) {
+        output.textContent = '❌ 디코딩 실패: 유효한 URL 문자열이 아닙니다.';
+      }
+    }
+  </script>
+</BaseLayout>
