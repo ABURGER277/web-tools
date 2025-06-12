@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 const { title = "Web Tools", description = "간단한 유틸리티 툴 모음" } = Astro.props;
 ---
 
@@ -8,17 +9,27 @@ const { title = "Web Tools", description = "간단한 유틸리티 툴 모음" }
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX" crossorigin="anonymous"></script> -->
   </head>
   <body>
-    <header>
-      <h1><a href="/">🛠 Web Tools</a></h1>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <p>&copy; {new Date().getFullYear()} Web Tools</p>
-    </footer>
+    <div class="container">
+      <header class="site-header">
+        <h1><a href="/">🛠 Web Tools</a></h1>
+      </header>
+
+      <main class="site-main">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; {new Date().getFullYear()} Web Tools |
+          <a href="/privacy-policy">개인정보처리방침</a> |
+          <a href="/terms">이용약관</a> |
+          <a href="/about">About</a>
+        </p>
+        <p>이 사이트는 무료로 제공되며, 광고를 포함할 수 있습니다.</p>
+      </footer>
+    </div>
   </body>
 </html>
