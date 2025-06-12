@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="문자 수 세기" description="입력한 문자열의 글자 수를 실시간으로 확인하세요.">
+  <h2>문자 수 세기</h2>
+  <textarea id="text-input" rows="8" placeholder="여기에 텍스트 입력..."></textarea>
+  <p>글자 수: <span id="char-count">0</span></p>
+
+  <script is:inline>
+    const input = document.getElementById("text-input");
+    const count = document.getElementById("char-count");
+    input.addEventListener("input", () => {
+      count.textContent = input.value.length;
+    });
+  </script>
+</BaseLayout>

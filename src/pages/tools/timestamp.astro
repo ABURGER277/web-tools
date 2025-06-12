@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Unix Timestamp 변환기" description="타임스탬프를 날짜로, 날짜를 타임스탬프로 변환하세요.">
+  <h2>Timestamp 변환기</h2>
+
+  <label>Unix Timestamp</label>
+  <input id="ts-input" type="number" placeholder="예: 1717545000" />
+  <button onclick="convertToDate()">→ 날짜</button>
+  <br /><br />
+
+  <label>날짜 → Timestamp</label>
+  <input id="date-input" type="datetime-local" />
+  <button onclick="convertToTimestamp()">→ 타임스탬프</button>
+
+  <pre id="ts-output" style="margin-top: 1rem;"></pre>
+
+  <script is:inline>
+    function convertToDate() {
+      const ts = Number(document.getElementById("ts-input").value);
+      const output = document.getElementById("ts-output");
+      if (!isNaN(ts)) {
+        const date = new Date(ts * 1000);
+        output.textContent = date.toISOString();
+      } else {
+        output.textContent = "유효한 타임스탬프를 입력하세요.";
+      }
+    }
+
+    function convertToTimestamp() {
+      const dateStr = document.getElementById("date-input").value;
+      const output = document.getElementById("ts-output");
+      const date = new Date(dateStr);
+      if (!isNaN(date.getTime())) {
+        output.textContent = Math.floor(date.getTime() / 1000);
+      } else {
+        output.textContent = "유효한 날짜를 입력하세요.";
+      }
+    }
+  </script>
+</BaseLayout>

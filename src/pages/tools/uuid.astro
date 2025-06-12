@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="UUID Generator" description="UUID v4를 생성하세요.">
+  <h2>UUID Generator</h2>
+  <button onclick="generateUUID()">새 UUID 생성</button>
+  <pre id="uuid-output" style="margin-top: 1rem;"></pre>
+
+  <script is:inline>
+    function generateUUID() {
+      const uuid = crypto.randomUUID();
+      const output = document.getElementById("uuid-output");
+      output.textContent = uuid;
+    }
+  </script>
+</BaseLayout>
